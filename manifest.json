@@ -1,0 +1,27 @@
+{
+  "name": "Mebratu Mengstu - Full-Stack Developer",
+  "short_name": "Mebratu Portfolio",
+  "description": "Full-Stack Developer specializing in React, Node.js & PostgreSQL. Based in Tel Aviv, Israel.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["portfolio", "developer", "technology"],
+  "lang": "en",
+  "dir": "ltr"
+}

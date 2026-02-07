@@ -1,0 +1,1958 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mebratu Mengstu - Full-Stack Developer in Tel Aviv, Israel. React, Node.js, PostgreSQL specialist. Available for hire in 2026.">
+    <meta name="keywords" content="Full-Stack Developer Israel, React Developer Tel Aviv, Node.js Developer, Web Developer Israel 2026, JavaScript Developer, TypeScript Developer">
+    <meta name="author" content="Mebratu Mengstu">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="canonical" href="https://mebratu-portfolio.vercel.app/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mebratu-portfolio.vercel.app/">
+    <meta property="og:title" content="Mebratu Mengstu | Full-Stack Developer">
+    <meta property="og:description" content="Full-Stack Developer specializing in React, Node.js & PostgreSQL. Based in Tel Aviv, Israel. Available for hire in 2026.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Mebratu Mengstu Portfolio">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://mebratu-portfolio.vercel.app/">
+    <meta name="twitter:title" content="Mebratu Mengstu | Full-Stack Developer">
+    <meta name="twitter:description" content="Full-Stack Developer specializing in React, Node.js & PostgreSQL. Based in Tel Aviv, Israel.">
+    <meta name="twitter:image" content="logo.png">
+
+    <title>Mebratu Mengstu | Full-Stack Developer Tel Aviv 2026</title>
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Mebratu Mengstu",
+        "jobTitle": "Full-Stack Developer",
+        "url": "https://mebratu-portfolio.vercel.app/",
+        "image": "logo.png",
+        "email": "mebratu21arch@gmail.com",
+        "telephone": "+972535514764",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Tel Aviv",
+            "addressCountry": "Israel"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/in/mebratu21",
+            "https://github.com/mebratu21-arch"
+        ],
+        "knowsAbout": ["React", "Node.js", "PostgreSQL", "TypeScript", "JavaScript", "Full-Stack Development"],
+        "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "Debre Berhan University"
+        },
+        "hasCredential": [
+            {
+                "@type": "EducationalOccupationalCredential",
+                "name": "B.Sc. Information Systems",
+                "credentialCategory": "degree"
+            },
+            {
+                "@type": "EducationalOccupationalCredential",
+                "name": "Cisco CCNA",
+                "credentialCategory": "certificate"
+            },
+            {
+                "@type": "EducationalOccupationalCredential",
+                "name": "Full-Stack Web Development Bootcamp",
+                "credentialCategory": "certificate"
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        [data-theme="dark"] {
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
+            --secondary: #34d399;
+            --accent: #fbbf24;
+            --dark: #f8fafc;
+            --light: #0f172a;
+            --gray: #94a3b8;
+            --bg-primary: #1e293b;
+            --bg-secondary: #0f172a;
+            --card-bg: #1e293b;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light);
+            transition: var(--transition);
+        }
+
+        [data-theme="dark"] body {
+            background: var(--bg-secondary);
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--primary);
+            color: white;
+            padding: 8px;
+            text-decoration: none;
+            z-index: 100;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        nav {
+            background: white;
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        [data-theme="dark"] nav {
+            background: var(--card-bg);
+        }
+
+        nav.scrolled {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo img {
+            height: 45px;
+            width: auto;
+            border-radius: 8px;
+        }
+
+        .logo-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a:focus::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus {
+            color: var(--primary);
+            outline: none;
+        }
+
+        .theme-toggle {
+            background: linear-gradient(145deg, #e6e9ef, #ffffff);
+            border: none;
+            border-radius: 50px;
+            width: 64px;
+            height: 32px;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.4s ease;
+            box-shadow: 
+                inset 2px 2px 4px rgba(0, 0, 0, 0.1),
+                inset -2px -2px 4px rgba(255, 255, 255, 0.9),
+                0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        [data-theme="dark"] .theme-toggle {
+            background: linear-gradient(145deg, #1a1a2e, #16213e);
+            box-shadow: 
+                inset 2px 2px 4px rgba(0, 0, 0, 0.3),
+                inset -2px -2px 4px rgba(255, 255, 255, 0.05),
+                0 2px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        .theme-toggle::before {
+            content: '☀️';
+            position: absolute;
+            top: 3px;
+            left: 4px;
+            width: 26px;
+            height: 26px;
+            background: linear-gradient(145deg, #fbbf24, #f59e0b);
+            border-radius: 50%;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            box-shadow: 0 2px 8px rgba(251, 191, 36, 0.5);
+        }
+
+        [data-theme="dark"] .theme-toggle::before {
+            content: '🌙';
+            transform: translateX(32px);
+            background: linear-gradient(145deg, #6366f1, #4f46e5);
+            box-shadow: 0 2px 12px rgba(99, 102, 241, 0.6);
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark);
+        }
+
+        .hero {
+            margin-top: 70px;
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="rgba(255,255,255,0.1)" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') bottom center no-repeat;
+            background-size: cover;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.6s both;
+        }
+
+        .btn {
+            padding: 0.875rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            outline: 2px solid white;
+            outline-offset: 2px;
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover,
+        .btn-secondary:focus {
+            background: white;
+            color: var(--primary);
+        }
+
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--dark);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        [data-theme="dark"] .stat-card {
+            background: var(--card-bg);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .stat-card .number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        .stat-card .label {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .skills-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            background: white;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+        }
+
+        [data-theme="dark"] .filter-btn {
+            background: var(--card-bg);
+        }
+
+        .filter-btn:hover,
+        .filter-btn:focus,
+        .filter-btn.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        [data-theme="dark"] .skill-category {
+            background: var(--card-bg);
+        }
+
+        .skill-category.hidden {
+            display: none;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-category ul {
+            list-style: none;
+        }
+
+        .skill-category li {
+            padding: 0.5rem 0;
+            color: var(--gray);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-category li i {
+            color: var(--secondary);
+            font-size: 0.8rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        [data-theme="dark"] .project-card {
+            background: var(--card-bg);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .project-image {
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .project-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0);
+            transition: var(--transition);
+        }
+
+        .project-card:hover .project-image::before {
+            background: rgba(0,0,0,0.2);
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-content p {
+            color: var(--gray);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tag {
+            background: var(--light);
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        [data-theme="dark"] .tech-tag {
+            background: rgba(37, 99, 235, 0.2);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: var(--transition);
+        }
+
+        .project-link:hover,
+        .project-link:focus {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        /* Certifications Gallery */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .cert-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        [data-theme="dark"] .cert-card {
+            background: var(--card-bg);
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cert-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .cert-info {
+            padding: 1.5rem;
+        }
+
+        .cert-info h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Blog Section */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        [data-theme="dark"] .blog-card {
+            background: var(--card-bg);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .blog-image {
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .blog-content {
+            padding: 1.5rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .blog-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .blog-content h3 {
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-content p {
+            color: var(--gray);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .read-more {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: var(--transition);
+        }
+
+        .read-more:hover,
+        .read-more:focus {
+            gap: 0.6rem;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        [data-theme="dark"] .timeline-item {
+            background: var(--card-bg);
+        }
+
+        .timeline-item:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 1.5rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid white;
+        }
+
+        [data-theme="dark"] .timeline-item::before {
+            border-color: var(--bg-secondary);
+        }
+
+        .timeline-item h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item .company {
+            color: var(--gray);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item ul {
+            margin-left: 1.5rem;
+            color: var(--gray);
+        }
+
+        .timeline-item ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-info-section h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        [data-theme="dark"] .contact-item {
+            background: var(--card-bg);
+        }
+
+        .contact-item:hover {
+            transform: translateX(5px);
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-top: 0.25rem;
+        }
+
+        .contact-item-content h4 {
+            color: var(--dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-item-content a,
+        .contact-item-content p {
+            color: var(--gray);
+            text-decoration: none;
+        }
+
+        .contact-item-content a:hover,
+        .contact-item-content a:focus {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        [data-theme="dark"] .contact-form {
+            background: var(--card-bg);
+        }
+
+        .contact-form h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--dark);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--light);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: var(--transition);
+            background: var(--light);
+            color: var(--dark);
+        }
+
+        [data-theme="dark"] .form-group input,
+        [data-theme="dark"] .form-group textarea,
+        [data-theme="dark"] .form-group select {
+            background: var(--bg-secondary);
+            border-color: var(--gray);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .submit-btn:hover,
+        .submit-btn:focus {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .submit-btn:disabled {
+            background: var(--gray);
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-message {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            display: none;
+        }
+
+        .form-message.success {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--secondary);
+            border: 1px solid var(--secondary);
+            display: block;
+        }
+
+        .form-message.error {
+            background: rgba(239, 68, 68, 0.1);
+            color: #ef4444;
+            border: 1px solid #ef4444;
+            display: block;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-link:hover,
+        .social-link:focus {
+            transform: translateY(-3px) scale(1.1);
+            background: var(--primary-dark);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Resume Download */
+        .resume-section {
+            text-align: center;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        [data-theme="dark"] .resume-section {
+            background: var(--card-bg);
+        }
+
+        .resume-section h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .resume-section p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .download-btn:hover,
+        .download-btn:focus {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem 2rem;
+        }
+
+        [data-theme="dark"] footer {
+            background: var(--bg-primary);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover,
+        .footer-section a:focus {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Scroll to Top */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .scroll-top:hover,
+        .scroll-top:focus {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        .scroll-top.visible {
+            display: flex;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: white;
+                width: 100%;
+                padding: 2rem;
+                box-shadow: var(--shadow);
+                transition: left 0.3s ease;
+            }
+
+            [data-theme="dark"] .nav-links {
+                background: var(--card-bg);
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .about-content,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid,
+            .blog-grid,
+            .certifications-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <nav id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.png" alt="Mebratu Mengstu - Full-Stack Developer">
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode"></button>
+                </li>
+            </ul>
+            <div class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Mebratu Mengstu</h1>
+            <div class="subtitle">Full-Stack Developer | B.Sc. Information Systems</div>
+            <p>Building enterprise-grade web applications with React, Node.js & PostgreSQL | ISO-Certified Developer | CCNA & Database Admin Level 3 | Ready for opportunities in Israel 2026</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i> Hire Me
+                </a>
+                <a href="#projects" class="btn btn-secondary">
+                    <i class="fas fa-code"></i> View Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <main id="main-content">
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Full-Stack Developer in Tel Aviv</h3>
+                    <p>
+                        I'm a passionate Full-Stack Developer with hands-on experience building production-ready web applications for the Israeli tech ecosystem. 
+                        My expertise spans the entire development stack, from crafting intuitive React interfaces to designing 
+                        robust backend systems with Node.js and PostgreSQL.
+                    </p>
+                    <p>
+                        Recently completed an intensive ISO-certified Full-Stack Web Development Bootcamp (360 hours) at Developers 
+                        Institute in Tel Aviv, where I mastered modern technologies and agile development practices. I hold a B.Sc. 
+                        in Information Systems from Debre Berhan University, along with professional certifications in Cisco CCNA 
+                        (Networking, Routing & Security) and Database Administration Level 3.
+                    </p>
+                    <p>
+                        <strong>Languages:</strong> Amharic (Native), English (Professional), Hebrew (Professional)
+                    </p>
+                    <p>
+                        <strong>Work Authorization:</strong> Eligible to work in Israel | Available immediately for full-time positions in 2026
+                    </p>
+                </div>
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="number">B.Sc.</div>
+                        <div class="label">Information Systems</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">360h</div>
+                        <div class="label">ISO Certified Bootcamp</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">3</div>
+                        <div class="label">Languages</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">4+</div>
+                        <div class="label">Certifications</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-header">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Skills</button>
+                    <button class="filter-btn" data-filter="frontend">Frontend</button>
+                    <button class="filter-btn" data-filter="backend">Backend</button>
+                    <button class="filter-btn" data-filter="database">Database</button>
+                    <button class="filter-btn" data-filter="tools">Tools</button>
+                </div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category" data-category="frontend">
+                    <h3><i class="fas fa-laptop-code"></i> Frontend Development</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> React & Redux</li>
+                        <li><i class="fas fa-check-circle"></i> JavaScript (ES6+)</li>
+                        <li><i class="fas fa-check-circle"></i> TypeScript</li>
+                        <li><i class="fas fa-check-circle"></i> HTML5 & CSS3</li>
+                        <li><i class="fas fa-check-circle"></i> Tailwind CSS</li>
+                        <li><i class="fas fa-check-circle"></i> Bootstrap</li>
+                        <li><i class="fas fa-check-circle"></i> Responsive Design</li>
+                    </ul>
+                </div>
+                <div class="skill-category" data-category="backend">
+                    <h3><i class="fas fa-server"></i> Backend Development</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Node.js</li>
+                        <li><i class="fas fa-check-circle"></i> Express.js</li>
+                        <li><i class="fas fa-check-circle"></i> REST APIs</li>
+                        <li><i class="fas fa-check-circle"></i> JWT Authentication</li>
+                        <li><i class="fas fa-check-circle"></i> Stripe Integration</li>
+                        <li><i class="fas fa-check-circle"></i> Python</li>
+                    </ul>
+                </div>
+                <div class="skill-category" data-category="database">
+                    <h3><i class="fas fa-database"></i> Database Management</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> PostgreSQL</li>
+                        <li><i class="fas fa-check-circle"></i> MySQL</li>
+                        <li><i class="fas fa-check-circle"></i> SQL Optimization</li>
+                        <li><i class="fas fa-check-circle"></i> Database Design</li>
+                        <li><i class="fas fa-check-circle"></i> Knex.js</li>
+                    </ul>
+                </div>
+                <div class="skill-category" data-category="tools">
+                    <h3><i class="fas fa-tools"></i> Tools & Practices</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Git & GitHub</li>
+                        <li><i class="fas fa-check-circle"></i> VS Code</li>
+                        <li><i class="fas fa-check-circle"></i> Postman</li>
+                        <li><i class="fas fa-check-circle"></i> Agile/Scrum</li>
+                        <li><i class="fas fa-check-circle"></i> Vercel & Render</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="shop.png" alt="Mebratu Shop Screenshot - E-commerce platform built with React and Node.js" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+                    </div>
+                    <div class="project-content">
+                        <h3>Mebratu Shop - E-Commerce Platform</h3>
+                        <p>
+                            Full-stack e-commerce platform with secure authentication, payment processing via Stripe, and real-time inventory management. Features include user authentication, product catalog, shopping cart, and admin dashboard.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Stripe</span>
+                            <span class="tech-tag">JWT</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/mebratu21-arch/Mebratu-Projects" target="_blank" class="project-link" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="screen project.png" alt="Choco Ops Cloud - Enterprise ERP system with React TypeScript and PostgreSQL" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+                    </div>
+                    <div class="project-content">
+                        <h3>Choco Ops Cloud & Artisan ERP</h3>
+                        <p>
+                            Cloud-based factory management and enterprise resource planning system with real-time monitoring, analytics dashboard, production tracking, and comprehensive business analytics. Features multilingual support (Amharic/English/Hebrew) and role-based access control (RBAC).
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express.js</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/mebratu21-arch/choco-ops-cloud" target="_blank" class="project-link" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <h2 class="section-title">Certifications & Credentials</h2>
+            <div class="certifications-grid">
+                <div class="cert-card">
+                    <div class="cert-info">
+                        <h3><i class="fas fa-certificate"></i> Cisco CCNA</h3>
+                        <p>Networking Academy - Debre Berhan University</p>
+                        <p><strong>CCNA1:</strong> Introduction to Networks (90/100)</p>
+                        <p><strong>CCNA2:</strong> Switching & Routing (93/100)</p>
+                        <p><strong>CCNA3:</strong> Enterprise Security (89/100)</p>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-info">
+                        <h3><i class="fas fa-graduation-cap"></i> Full-Stack Bootcamp</h3>
+                        <p>Developers Institute (Gimel) - Tel Aviv</p>
+                        <p>360-hour ISO-certified program</p>
+                        <p>September 2024 - January 2025</p>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-info">
+                        <h3><i class="fas fa-database"></i> Database Admin Level 3</h3>
+                        <p>Federal TVET Agency, Ethiopia</p>
+                        <p>Professional database administration certification</p>
+                        <p>Issued: 2022</p>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-info">
+                        <h3><i class="fas fa-network-wired"></i> Networking Expertise</h3>
+                        <p>Comprehensive networking, routing, and security training</p>
+                        <p>Enterprise-level network configuration</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2 class="section-title">Experience & Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Full-Stack Web Development Bootcamp (ISO Certified)</h3>
+                    <div class="company">Developers Institute (Gimel), Tel Aviv | September 2024 - January 2025</div>
+                    <ul>
+                        <li>360-hour intensive program in modern web development technologies</li>
+                        <li>Built production-ready e-commerce and enterprise ERP systems</li>
+                        <li>Mastered React, TypeScript, Node.js, Express.js, and PostgreSQL</li>
+                        <li>Implemented Agile/Scrum methodologies, RBAC, JWT authentication, and Stripe payments</li>
+                        <li>Achieved excellence in full-stack development with multilingual (RTL/LTR) support</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Machine Operator</h3>
+                    <div class="company">Max Brenner Chocolate Factory, Tel Aviv | 2024</div>
+                    <ul>
+                        <li>Operated and monitored automated production systems</li>
+                        <li>Diagnosed and resolved technical issues to maintain workflow</li>
+                        <li>Ensured compliance with quality, hygiene, and safety standards</li>
+                        <li>Collaborated with cross-functional teams for operational efficiency</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Preparation Course (Mechina Program)</h3>
+                    <div class="company">Hebrew University of Jerusalem | 2023</div>
+                    <ul>
+                        <li>Intensive Hebrew language and academic preparation program</li>
+                        <li>Cultural integration and Israeli society studies</li>
+                        <li>Advanced Hebrew proficiency for professional work environment</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>B.Sc. Information Systems</h3>
+                    <div class="company">Debre Berhan University, Ethiopia | 2018 - 2022</div>
+                    <ul>
+                        <li>Comprehensive study in information systems and software development</li>
+                        <li>Database design, networking, and systems analysis</li>
+                        <li>Graduated with honors in Information Systems</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Database Administration Level 3 Certification</h3>
+                    <div class="company">Federal TVET Agency, Ethiopia | 2022</div>
+                    <ul>
+                        <li>Professional certification in database administration</li>
+                        <li>Database design, optimization, and security</li>
+                        <li>Performance tuning and query optimization</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <h3>Cisco CCNA - Networking Academy</h3>
+                    <div class="company">Debre Berhan University | 2021</div>
+                    <ul>
+                        <li>CCNA1: Introduction to Networks (90/100)</li>
+                        <li>CCNA2: Switching, Routing, and Wireless Essentials (93/100)</li>
+                        <li>CCNA3: Enterprise Networking, Security, and Automation (89/100)</li>
+                        <li>Network troubleshooting and configuration expertise</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="resume-section">
+            <h3><i class="fas fa-file-download"></i> Download My Resume</h3>
+            <p>Get a detailed overview of my experience, skills, and qualifications in PDF format.</p>
+            <a href="Mebratu_Mengstu_Updated_CV.pdf" class="download-btn" download>
+                <i class="fas fa-download"></i> Download Resume (PDF)
+            </a>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-grid">
+                    <div class="contact-info-section">
+                        <h3>Contact Information</h3>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div class="contact-item-content">
+                                <h4>Email</h4>
+                                <a href="mailto:mebratu21arch@gmail.com">mebratu21arch@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div class="contact-item-content">
+                                <h4>Phone</h4>
+                                <a href="tel:+972535514764">+972 53-551-4764</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="contact-item-content">
+                                <h4>Location</h4>
+                                <p>Tel Aviv, Israel</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <div class="contact-item-content">
+                                <h4>LinkedIn</h4>
+                                <a href="https://www.linkedin.com/in/mebratu21" target="_blank" rel="noopener noreferrer">linkedin.com/in/mebratu21</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <div class="contact-item-content">
+                                <h4>GitHub</h4>
+                                <a href="https://github.com/mebratu21-arch" target="_blank" rel="noopener noreferrer">github.com/mebratu21-arch</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-section">
+                        <form class="contact-form" id="contactForm">
+                            <h3>Send Me a Message</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Name *</label>
+                                    <input type="text" id="name" name="name" required aria-required="true">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email *</label>
+                                    <input type="email" id="email" name="email" required aria-required="true">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject *</label>
+                                <select id="subject" name="subject" required aria-required="true">
+                                    <option value="">Select a subject</option>
+                                    <option value="job">Job Opportunity</option>
+                                    <option value="project">Project Collaboration</option>
+                                    <option value="freelance">Freelance Work</option>
+                                    <option value="general">General Inquiry</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" required aria-required="true"></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">
+                                <span class="btn-text">Send Message</span>
+                                <span class="loading" style="display: none;"></span>
+                            </button>
+                            <div class="form-message" id="formMessage"></div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/mebratu21" target="_blank" class="social-link" title="LinkedIn" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/mebratu21-arch" target="_blank" class="social-link" title="GitHub" rel="noopener noreferrer" aria-label="GitHub Profile">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:mebratu21arch@gmail.com" class="social-link" title="Email" aria-label="Send Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="tel:+972535514764" class="social-link" title="Phone" aria-label="Call Phone">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Mebratu Mengstu</h3>
+                <p>Full-Stack Developer specializing in building modern web applications with React, Node.js, and PostgreSQL.</p>
+                <p>Based in Tel Aviv, Israel 🇮🇱</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#certifications">Certifications</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <a href="#projects">Full-Stack Development</a>
+                <a href="#projects">Web Application Development</a>
+                <a href="#projects">API Development</a>
+                <a href="#projects">Database Design</a>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <a href="https://www.linkedin.com/in/mebratu21" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/mebratu21-arch" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="mailto:mebratu21arch@gmail.com">Email</a>
+                <a href="tel:+972535514764">Phone</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Mebratu Mengstu. All rights reserved. Built with passion in Tel Aviv, Israel.</p>
+        </div>
+    </footer>
+
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', currentTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const theme = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+        });
+
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileToggle.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = mobileToggle.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 70;
+                    const targetPosition = target.offsetTop - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const skillCategories = document.querySelectorAll('.skill-category');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+
+                skillCategories.forEach(category => {
+                    if (filter === 'all' || category.getAttribute('data-category') === filter) {
+                        category.classList.remove('hidden');
+                    } else {
+                        category.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        const contactForm = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const submitBtn = contactForm.querySelector('.submit-btn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const loading = submitBtn.querySelector('.loading');
+
+            // Get form data
+            const formData = new FormData(contactForm);
+            const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                phone: formData.get('phone') || 'Not provided',
+                subject: formData.get('subject'),
+                message: formData.get('message')
+            };
+
+            // Validate form data
+            if (!data.name || !data.email || !data.subject || !data.message) {
+                formMessage.textContent = 'Please fill in all required fields.';
+                formMessage.className = 'form-message error';
+                return;
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(data.email)) {
+                formMessage.textContent = 'Please enter a valid email address.';
+                formMessage.className = 'form-message error';
+                return;
+            }
+
+            btnText.style.display = 'none';
+            loading.style.display = 'inline-block';
+            submitBtn.disabled = true;
+
+            try {
+                // Using Formspree for form handling (free tier available)
+                // Replace 'YOUR_FORM_ID' with your actual Formspree form ID
+                const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                btnText.style.display = 'inline';
+                loading.style.display = 'none';
+                submitBtn.disabled = false;
+
+                if (response.ok) {
+                    formMessage.textContent = 'Thank you! Your message has been sent successfully. I\'ll get back to you soon.';
+                    formMessage.className = 'form-message success';
+                    contactForm.reset();
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            } catch (error) {
+                btnText.style.display = 'inline';
+                loading.style.display = 'none';
+                submitBtn.disabled = false;
+
+                // Fallback: Open email client
+                const mailtoLink = `mailto:mebratu21arch@gmail.com?subject=${encodeURIComponent(data.subject + ' - ' + data.name)}&body=${encodeURIComponent('Name: ' + data.name + '\nEmail: ' + data.email + '\nPhone: ' + data.phone + '\n\nMessage:\n' + data.message)}`;
+                window.location.href = mailtoLink;
+
+                formMessage.textContent = 'Opening your email client to send the message...';
+                formMessage.className = 'form-message success';
+            }
+
+            setTimeout(() => {
+                formMessage.className = 'form-message';
+            }, 5000);
+        });
+
+        const scrollTop = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        scrollTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.skill-category, .project-card, .cert-card, .timeline-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Register Service Worker for offline support
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then((registration) => {
+                        console.log('ServiceWorker registered:', registration.scope);
+                    })
+                    .catch((error) => {
+                        console.log('ServiceWorker registration failed:', error);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>
+ 
