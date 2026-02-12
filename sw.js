@@ -4,8 +4,8 @@ const urlsToCache = [
   '/index.html',
   '/logo.png',
   '/shop.png',
-  '/screen project.png',
   '/Mebratu_Mengstu_Updated_CV.pdf',
+  '/new dashboard.png',
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'
 ];
 

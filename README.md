@@ -98,7 +98,7 @@ portfolio/
 ├── sw.js                           # Service worker
 ├── logo.png                        # Personal logo/favicon
 ├── shop.png                        # E-commerce project screenshot
-├── screen project.png              # ERP project screenshot
+├── new dashboard.png                # ERP project screenshot
 ├── Mebratu_Mengstu_Updated_CV.pdf  # Resume/CV
 └── README.md                       # Documentation
 ```
