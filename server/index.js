@@ -40,13 +40,7 @@ app.use("/api/auth", authRouter);
 app.use("/api/projects", projectsRouter);
 app.use("/api/messages", messagesRouter);
 
-// ─── Serve Admin Dashboard ───
-app.get("/admin", (req, res) => {
-  res.sendFile(path.join(__dirname, "../admin.html"));
-});
-app.get("/admin.html", (req, res) => {
-  res.sendFile(path.join(__dirname, "../admin.html"));
-});
+
 
 // ─── Serve React Frontend (Production Build) ───
 app.use(express.static(path.join(__dirname, "../client/dist")));

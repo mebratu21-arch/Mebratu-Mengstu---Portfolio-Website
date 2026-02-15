@@ -6,7 +6,7 @@
 
 A modern, full-stack portfolio application showcasing my expertise as a Full-Stack Developer. Built with **React** (Vite) on the frontend and **Node.js/Express** with **PostgreSQL** on the backend.
 
-![Portfolio Preview](/client/public/logo.png)
+![Portfolio Preview](docs/assets/logo.png)
 
 ---
 
@@ -27,12 +27,14 @@ A modern, full-stack portfolio application showcasing my expertise as a Full-Sta
 ## 🛠️ Tech Stack
 
 ### Frontend
+
 - **React 18** (Vite)
 - **Bootstrap 5** & React-Bootstrap
 - **Intersection Observer API** for animations
 - **Font Awesome** for icons
 
 ### Backend
+
 - **Node.js** & **Express**
 - **PostgreSQL** (Neon DB)
 - **RESTful API**
