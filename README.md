@@ -1,16 +1,64 @@
-# Mebratu Mengstu | Full-Stack Developer Portfolio
+<div align="center">
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge)](https://mebratu-portfolio.vercel.app/)
-[![GitHub](https://img.shields.io/badge/GitHub-Profile-blue?style=for-the-badge&logo=github)](https://github.com/mebratu21-arch)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/mebratu21)
+# Hi there, I'm Mebratu Mengstu 👋
 
-A modern, full-stack portfolio application showcasing my expertise as a Full-Stack Developer. Built with **React** (Vite) on the frontend and **Node.js/Express** with **PostgreSQL** on the backend.
+### Full-Stack Developer | Architecting Digital Experiences
 
-![Portfolio Preview](docs/assets/logo.png)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mebratu21)
+[![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mebratu21-arch)
+[![Email](https://img.shields.io/badge/Email-Contact_Me-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:mebratu21arch@gmail.com)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Visit_App-brightgreen?style=for-the-badge&logo=vercel&logoColor=white)](https://mebratu-portfolio.vercel.app/)
+
+<img src="docs/assets/logo.png" alt="Portfolio Logo" width="200" />
+
+<br/>
+
+**A modern, full-stack portfolio application showcasing my expertise.**  
+*Built with React (Vite), Node.js, and PostgreSQL.*
+
+</div>
 
 ---
 
-## 🚀 Features
+## 🚀 Expertise
+
+I specialize in building scalable, user-centric web applications. My passion lies in bridging the gap between elegant design and robust backend architecture.
+
+- 💻 **Frontend Development**: Creating responsive, interactive SPAs with React.
+- ⚙️ **Backend Engineering**: Designing RESTful APIs and secure authentication systems.
+- 🗄️ **Database Management**: structuring complex data with PostgreSQL.
+- ☁️ **Cloud Deployment**: Orchestrating deployments on Vercel and Render.
+
+---
+
+## 🛠 Tech Stack
+
+<div align="center">
+
+### Frontend
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+
+### Backend
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
+
+### Tools
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![VS Code](https://img.shields.io/badge/VS_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white)
+![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
+
+</div>
+
+---
+
+## 🌟 Features
 
 | Feature | Description |
 | ------- | ----------- |
@@ -20,25 +68,6 @@ A modern, full-stack portfolio application showcasing my expertise as a Full-Sta
 | **User Engagement** | Real-time "Like" button for projects. |
 | **Contact System** | Functional contact form saving messages to DB (with mailto fallback). |
 | **Responsive Design** | Mobile-first approach using Bootstrap 5 & Custom CSS. |
-| **Interactive UI** | Scroll animations, typing effects, and smooth transitions. |
-
----
-
-## 🛠️ Tech Stack
-
-### Frontend
-
-- **React 18** (Vite)
-- **Bootstrap 5** & React-Bootstrap
-- **Intersection Observer API** for animations
-- **Font Awesome** for icons
-
-### Backend
-
-- **Node.js** & **Express**
-- **PostgreSQL** (Neon DB)
-- **RESTful API**
-- **Authentication**: `express-session`, `connect-pg-simple`, `bcryptjs`
 
 ---
 
@@ -63,89 +92,52 @@ portfolio/
 
 ## ⚡ Quick Start
 
-### Prerequisites
-
-- Node.js (v18+)
-- PostgreSQL Database (Local or Cloud like Neon)
-
 ### Installation
 
 1.  **Clone the repository**
-
     ```bash
     git clone https://github.com/mebratu21-arch/Mebratu-Mengstu---Portfolio-Website.git
     cd Mebratu-Mengstu---Portfolio-Website
     ```
 
 2.  **Install Dependencies**
-
     ```bash
-    # Install server dependencies
-    cd server
-    npm install
-
-    # Install client dependencies
-    cd ../client
-    npm install
+    # Server
+    cd server && npm install
+    # Client
+    cd ../client && npm install
     ```
 
 3.  **Environment Setup**
-
-    Create a `.env` file in the `server/` directory:
-
+    Create `.env` in `server/`:
     ```env
     DATABASE_URL=postgresql://user:password@host:port/dbname?sslmode=require
     PORT=3000
     SESSION_SECRET=your_secret_key
-    ADMIN_PASSWORD_HASH= # Generate with bcrypt
+    ADMIN_PASSWORD_HASH=...
     ```
 
-4.  **Database Migration**
-
+4.  **Run Application**
     ```bash
     cd server
-    node seed.js           # Seeds initial project data
-    node migrate_likes.js  # Adds 'likes' column
-    node migrate_session.js # Adds session table
-    ```
-
-5.  **Build Frontend**
-
-    ```bash
-    cd ../client
-    npm run build
-    ```
-
-6.  **Run Application**
-
-    ```bash
-    cd ../server
     node index.js
     ```
     Visit `http://localhost:3000`
 
 ---
 
-## 🔐 Admin Access
+<div align="center">
 
-The admin dashboard is located at `/admin`.
+## 📬 Contact Me
 
-- **Default Password:** Configured via `ADMIN_PASSWORD_HASH` in `.env`.
-- Capabilities: Add/Edit/Delete projects, View/Delete messages.
-
----
-
-## 📬 Contact
-
-**Mebratu Mengstu**
+**Mebratu Mengstu**  
 Full-Stack Developer | Tel Aviv, Israel
 
-- **Email:** [mebratu21arch@gmail.com](mailto:mebratu21arch@gmail.com)
-- **LinkedIn:** [linkedin.com/in/mebratu21](https://www.linkedin.com/in/mebratu21)
-- **GitHub:** [github.com/mebratu21-arch](https://github.com/mebratu21-arch)
+[![Email](https://img.shields.io/badge/Email-mebratu21arch@gmail.com-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:mebratu21arch@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Mebratu_Mengstu-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mebratu21)
 
----
+<br/>
 
-## License
+*This project is open source and available under the [MIT License](LICENSE).*
 
-This project is open source and available under the [MIT License](LICENSE).
+</div>
