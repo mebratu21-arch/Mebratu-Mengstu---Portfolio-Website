@@ -19,20 +19,29 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // ─── Middleware ───
+app.set("trust proxy", 1); // Trust first proxy (Render/Vercel) for secure cookies
+
 app.use(helmet({ contentSecurityPolicy: false })); // CSP off for CDN links
-app.use(cors());
+app.use(cors({
+  origin: process.env.CLIENT_ORIGIN || "http://localhost:5173", // Allow Vercel frontend
+  credentials: true, // Allow cookies
+}));
 app.use(express.json());
 
 // Session setup
 app.use(session({
   store: new pgSession({
-    pool: require("./db"), // Use existing pool
-    tableName: 'session'   // We need to create this table!
+    pool: require("./db"),
+    tableName: 'session'
   }),
   secret: process.env.SESSION_SECRET || 'dev_secret',
   resave: false,
   saveUninitialized: false,
-  cookie: { maxAge: 30 * 24 * 60 * 60 * 1000 } // 30 days
+  cookie: { 
+    maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
+    secure: process.env.NODE_ENV === "production", // Secure in prod
+    sameSite: process.env.NODE_ENV === "production" ? "none" : "lax" // Cross-site in prod
+  }
 }));
 
 // ─── API Routes ───
