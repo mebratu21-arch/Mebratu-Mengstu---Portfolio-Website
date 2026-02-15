@@ -48,13 +48,15 @@ A modern, full-stack portfolio application showcasing my expertise as a Full-Sta
 portfolio/
 ├── client/                 # React Frontend
 │   ├── src/                # Components & Hooks
-│   ├── public/             # Static Assets
+│   ├── public/             # Static Assets (includes admin.html)
 │   └── dist/               # Production Build
 ├── server/                 # Node.js Backend
-│   ├── routes/             # API Endpoints (projects, messages, auth)
+│   ├── routes/             # API Endpoints
 │   ├── middleware/         # Auth Middleware
 │   └── db.js               # Database Connection
-└── admin.html              # Admin Dashboard (Lightweight client)
+├── legacy/                 # Old HTML/CSS version
+├── docs/                   # Documentation assets
+└── README.md               # Documentation
 ```
 
 ---
@@ -62,18 +64,21 @@ portfolio/
 ## ⚡ Quick Start
 
 ### Prerequisites
+
 - Node.js (v18+)
 - PostgreSQL Database (Local or Cloud like Neon)
 
 ### Installation
 
 1.  **Clone the repository**
+
     ```bash
     git clone https://github.com/mebratu21-arch/Mebratu-Mengstu---Portfolio-Website.git
     cd Mebratu-Mengstu---Portfolio-Website
     ```
 
 2.  **Install Dependencies**
+
     ```bash
     # Install server dependencies
     cd server
@@ -85,7 +90,9 @@ portfolio/
     ```
 
 3.  **Environment Setup**
+
     Create a `.env` file in the `server/` directory:
+
     ```env
     DATABASE_URL=postgresql://user:password@host:port/dbname?sslmode=require
     PORT=3000
@@ -94,6 +101,7 @@ portfolio/
     ```
 
 4.  **Database Migration**
+
     ```bash
     cd server
     node seed.js           # Seeds initial project data
@@ -102,12 +110,14 @@ portfolio/
     ```
 
 5.  **Build Frontend**
+
     ```bash
     cd ../client
     npm run build
     ```
 
 6.  **Run Application**
+
     ```bash
     cd ../server
     node index.js
@@ -119,6 +129,7 @@ portfolio/
 ## 🔐 Admin Access
 
 The admin dashboard is located at `/admin`.
+
 - **Default Password:** Configured via `ADMIN_PASSWORD_HASH` in `.env`.
 - Capabilities: Add/Edit/Delete projects, View/Delete messages.
 
